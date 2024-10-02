@@ -17,5 +17,5 @@ const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-
-db.dreams = require("./dream.model.js")
+db.dreams = require("./dream.model.js")(sequelize, Sequelize);
+module.exports = db;

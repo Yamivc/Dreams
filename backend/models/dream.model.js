@@ -1,14 +1,17 @@
 module.exports = (sequelize, Sequelize) => {
-    const Dream = sequelize.define("bicycle", {
+  const Dream = sequelize.define("dream", {
     title: {
-        type: Sequelize.STRING
+      type: Sequelize.STRING,
     },
     description: {
-        type: Sequelize.STRING
+      type: Sequelize.STRING,
     },
-    });
+    feel: {
+      type: Sequelize.STRING,
+    },
+  });
 
-    return Dream;
+  return Dream;
 };
 
 //función anonima.
