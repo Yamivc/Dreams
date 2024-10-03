@@ -12,6 +12,6 @@ module.exports = app => {
     
     router.delete("/", dreams.delete);
 
-    app.use('/api/dreams')
-
+    app.use('/api/dreams', router)
+    
 }
