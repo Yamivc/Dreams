@@ -34,6 +34,12 @@ Navigate to the backend directory and start the backend server: `cd backend/` an
 - **Ionic** - Framework for building mobile and web apps
 - **Angular** - Frontend framework
 
+## POSTMAN
+[
+](https://www.postman.com/yamizs/workspace/dreams/collection/38771018-9eacdddb-ce39-4afa-a0e7-a738ac6a1677?action=share&creator=38771018)
+
+(BE CAREFULL THE ID OF MY PROYECT CHANGES AND GOES UP EVERYTIME SO IF YOU WANT TO TRY THE END POINT WATCH THE ID OF THE LAST ONE CREATED)
+
 ## Author
 
 **Yamiley H.**
