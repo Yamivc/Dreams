@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  title: string = "title";
+  description: string = "description";
+  feel: string ="feel";
+  
+
   constructor() {}
 
 }
