@@ -1,10 +1,10 @@
-const { where } = require("sequelize");
+// const { where } = require("sequelize");
 const db = require("../models");
 const Dream = db.dreams;
-const Op = db.Sequelize.Op;
+// const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
-  if (!req.title.description) {
+  if (!req.body.description) {
     res.status(400).send({
       message: "Field required!",
     });
@@ -14,7 +14,9 @@ exports.create = (req, res) => {
   const dream = {
     title: req.body.title,
     description: req.body.description,
-    feel: body.feel,
+    feel: req.body.feel,
+    img: req.body.img, //lógica para añadir imagenes
+    date: req.body.date,
   };
 
   Dream.create(dream)
@@ -40,8 +42,29 @@ exports.findAll = (req, res) => {
     });
 };
 
+exports.findOne = (req, res) => {
+  const id = req.params.id;
+
+  Dream.findByPk(id)
+    .then((data) => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Dream with id=${id} not found.`,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error retrieving dream with id=" + id,
+      });
+    });
+};
+
+
 exports.update = (req, res) => {
-  const id = req.title.id;
+  const id = req.params.id;
 
   Dream.update(req.body, { where: { id: id } })
 
@@ -64,9 +87,9 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  const id = req.title.id;
+  const id = req.params.id;
 
-  Dream.delete({
+  Dream.destroy({
     where: { id: id }
   })
     .then(num =>{

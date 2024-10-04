@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'my-dreams',
+    loadChildren: () => import('./my-dreams/my-dreams.module').then( m => m.MyDreamsPageModule)
+  },
+  {
+    path: 'add-dream',
+    loadChildren: () => import('./add-dream/add-dream.module').then( m => m.AddDreamPageModule)
+  },
 ];
 
 @NgModule({

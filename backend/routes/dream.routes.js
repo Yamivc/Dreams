@@ -8,9 +8,11 @@ module.exports = app => {
 
     router.get("/", dreams.findAll);
 
-    router.put("/", dreams.update);
+    router.get("/:id", dreams.findOne);
+
+    router.put("/:id", dreams.update);
     
-    router.delete("/", dreams.delete);
+    router.delete("/:id", dreams.delete);
 
     app.use('/api/dreams', router)
     

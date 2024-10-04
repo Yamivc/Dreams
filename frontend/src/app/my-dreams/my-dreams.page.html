@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>My dreams</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let d of dreams">
+        <ion-card>
+          <img [src]="d.img" alt="{{d.title}}"/>
+          <ion-card-content>
+            <h1>{{d.title}}</h1>
+            <p>{{d.description}}</p>
+            <p >Updated {{d.date}}</p>
+            <ion-button (click)="deleteDream(d.id)">delete</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

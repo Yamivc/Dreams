@@ -1,0 +1,45 @@
+page-my-dreams {
+  ion-grid {
+    padding: 10px;
+    --ion-grid-padding: 0;
+    --ion-grid-column-padding: 10px;
+
+    ion-row {
+      justify-content: center;
+    }
+
+    ion-col {
+      padding: 0;
+
+      ion-card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+       img{
+        max-height: 100px;
+       }
+
+        ion-card-content {
+          text-align: center;
+
+          max-height: 100px;
+
+          h2 {
+            font-size: 16px;
+            margin: 10px 0 5px;
+          }
+
+          p {
+            font-size: 14px;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+}

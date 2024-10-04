@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>add-dream</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="dreamForm" (ngSubmit)="createDream()">
+
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input formControlName="title" type="text"> </ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('title')?.hasError('required') && getFormControl('title')?.touched ">
+      field empty, a title is required
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-input formControlName="description" type="text"> </ion-input>
+    </ion-item>
+    <ion-note color="danger"
+      *ngIf="getFormControl('description')?.hasError('required') && getFormControl('description')?.touched ">
+      field empty, a description is required
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">feel</ion-label>
+      <ion-input formControlName="feel" type="text"> </ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('feel')?.hasError('required') && getFormControl('feel')?.touched ">
+      field empty, a feel is required
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Url de la imagen que quieras añadir</ion-label>
+      <ion-input formControlName="img" type="text"> </ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('img')?.hasError('required') && getFormControl('feel')?.touched ">
+      field empty, a img url is required
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">date</ion-label>
+      <ion-input formControlName="date" type="date"> </ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('date')?.hasError('required') && getFormControl('date')?.touched ">
+      field empty, a img url is required
+    </ion-note>
+
+    <ion-button expand="full" type="submit" [disabled]="!dreamForm.valid">add a dream</ion-button>
+
+  </form>
+</ion-content>

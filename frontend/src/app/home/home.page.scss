@@ -1,32 +1,34 @@
-#container {
-  text-align: center;
+.home-content {
+  position: relative; 
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  .background-image {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover; 
+    filter: brightness(0.6); 
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  #container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    color: white;  
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  
 
-  color: #8c8c8c;
+    ion-button {
+      width: 80%; 
+      --background: #2011ad;
+      --color: white; 
 
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-.title {
-
-  background-color: slateblue;
+      &:hover {
+        --background: #0f00b3; 
+      }
+    }
+  }
 }
